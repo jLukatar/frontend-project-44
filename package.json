@@ -1,12 +1,15 @@
 {
   "name": "@hexlet/code",
   "version": "1.0.0",
-  "version": "module",
+  "type": "module",
   "description": "1st hexlet project",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "bin": {
+   "brain-games": "bin/brain-games.js"
+  }
 }
