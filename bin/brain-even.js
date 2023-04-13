@@ -17,4 +17,7 @@ for (let i = 1; i <= 3; i += 1) {
     console.log(`Let's try again, ${userName}`);
     break;
   }
+  if (i === 3) {
+    console.log(`Congratulations, ${userName}!`);
+  }
 }

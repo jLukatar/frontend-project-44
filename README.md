@@ -2,4 +2,4 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/jLukatar/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/jLukatar/frontend-project-44/actions)
 
-https://asciinema.org/a/xZIcELErYQumiQLHrMgEPgLmV brain-even example.
+https://asciinema.org/a/t5TfrobUDWLcj2NvtMT2gYHTT brain-even example.
