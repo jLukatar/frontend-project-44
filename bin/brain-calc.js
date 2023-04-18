@@ -10,7 +10,22 @@ for (let i = 1; i <= 3; i += 1) {
   const secondNum = Math.floor(Math.random() * 11);
   const Operation = mathOperations[Math.floor(Math.random() * 3)];
   const mathProblem = `${firstNum} ${Operation} ${secondNum}`;
-  const correctAnswer = (eval(mathProblem)).toString();
+  let correctAnswer;
+  switch (Operation) {
+    case '+':
+      correctAnswer = firstNum + secondNum;
+      break;
+    case '-':
+      correctAnswer = firstNum - secondNum;
+      break;
+    case '*':
+      correctAnswer = firstNum * secondNum;
+      break;
+    default:
+      break;
+  }
+  console.log(correctAnswer);
+  correctAnswer = correctAnswer.toString();
   const result = gameLogic(correctAnswer, userName, mathProblem, i);
   if (!result) {
     break;
