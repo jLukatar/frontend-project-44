@@ -2,8 +2,8 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/jLukatar/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/jLukatar/frontend-project-44/actions)
 
-https://asciinema.org/a/t5TfrobUDWLcj2NvtMT2gYHTT brain-even example.
-https://asciinema.org/a/viVzXBzKUPVSqwhSXkFGPQrrY brain-calc example.
-https://asciinema.org/a/liBDnXeiv8kpBvWTKW39Yfe3a brain-gcd example.
-https://asciinema.org/a/U1zcP85fVcdhVAGNpu6ofpOdS brain-prograssion example.
-https://asciinema.org/a/MfmaCfJHUqTI6bqjLHPxvMx3I brain-prime example.
+https://asciinema.org/a/t5TfrobUDWLcj2NvtMT2gYHTT brain-even example.</br>
+https://asciinema.org/a/viVzXBzKUPVSqwhSXkFGPQrrY brain-calc example.</br>
+https://asciinema.org/a/liBDnXeiv8kpBvWTKW39Yfe3a brain-gcd example.</br>
+https://asciinema.org/a/U1zcP85fVcdhVAGNpu6ofpOdS brain-prograssion example.</br>
+https://asciinema.org/a/MfmaCfJHUqTI6bqjLHPxvMx3I brain-prime example.</br>
