@@ -5,3 +5,4 @@
 https://asciinema.org/a/t5TfrobUDWLcj2NvtMT2gYHTT brain-even example.
 https://asciinema.org/a/viVzXBzKUPVSqwhSXkFGPQrrY brain-calc example.
 https://asciinema.org/a/liBDnXeiv8kpBvWTKW39Yfe3a brain-gcd example.
+https://asciinema.org/a/U1zcP85fVcdhVAGNpu6ofpOdS brain-prograssion example.
