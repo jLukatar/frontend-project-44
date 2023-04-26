@@ -1,20 +1,25 @@
 import readlineSync from 'readline-sync';
 
-const gameLogic = (correctAnswer, userName, question, i) => {
-  console.log(`Question: ${question}`);
-  const userAnswer = readlineSync.question('Your answer: ');
-  if (correctAnswer === userAnswer) {
-    console.log('Correct!');
-  } else {
-    console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-    console.log(`Let's try again, ${userName}!`);
-    return false;
+const gameLogic = (rounds, taskText) => {
+  console.log('Welcome to the Brain Games!');
+  const userName = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${userName}`);
+  console.log(taskText);
+  for (let i = 0; i < 3; i += 1) {
+    console.log(`Question: ${rounds[i].question}`);
+    const userAnswer = readlineSync.question('Your answer: ');
+    if (rounds[i].correctAnswer === userAnswer) {
+      console.log('Correct!');
+    } else {
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${rounds[i].correctAnswer}'.`);
+      console.log(`Let's try again, ${userName}!`);
+      return;
+    }
+    if (i === 2) {
+      console.log(`Congratulations, ${userName}!`);
+      return;
+    }
   }
-  if (i === 3) {
-    console.log(`Congratulations, ${userName}!`);
-    return true;
-  }
-  return true;
 };
 
 export default gameLogic;
