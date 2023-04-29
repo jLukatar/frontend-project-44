@@ -1,7 +1,7 @@
-import gameLogic from '../index.js';
-import randomNum from '../utils.js';
+import runGame from '../index.js';
+import generateRandomNumber from '../utils.js';
 
-const math = (operation, firstNum, secondNum) => {
+const calculate = (operation, firstNum, secondNum) => {
   switch (operation) {
     case '+':
       return firstNum + secondNum;
@@ -19,13 +19,13 @@ export default () => {
   const mathOperations = ['+', '-', '*'];
   const rounds = [];
   for (let i = 0; i < 3; i += 1) {
-    const firstNum = randomNum(11);
-    const secondNum = randomNum(11);
-    const operation = mathOperations[randomNum(3)];
+    const firstNum = generateRandomNumber(11);
+    const secondNum = generateRandomNumber(11);
+    const operation = mathOperations[generateRandomNumber(3)];
     const question = `${firstNum} ${operation} ${secondNum}`;
-    const correctAnswer = math(operation, firstNum, secondNum).toString();
+    const correctAnswer = calculate(operation, firstNum, secondNum).toString();
     const round = { question, correctAnswer };
     rounds.push(round);
   }
-  gameLogic(rounds, taskText);
+  runGame(rounds, taskText);
 };

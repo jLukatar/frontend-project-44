@@ -1,16 +1,15 @@
 #!/usr/bin/env node
-import gameLogic from '../index.js';
-import greeting from '../greeting.js';
+import runGame from '../index.js';
+import generateRandomNumber from '../utils.js';
 
 export default () => {
-  const userName = greeting();
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
-  for (let i = 1; i <= 3; i += 1) {
-    const number = Math.floor(Math.random() * 100 + 1);
-    const isEven = (number % 2 === 0) ? 'yes' : 'no';
-    const result = gameLogic(isEven, userName, number, i);
-    if (!result) {
-      break;
-    }
+  const qestionText = 'Answer "yes" if the number is even, otherwise answer "no".';
+  const rounds = [];
+  for (let i = 0; i <= 3; i += 1) {
+    const question = generateRandomNumber(100, 1);
+    const correctAnswer = (question % 2 === 0) ? 'yes' : 'no';
+    const round = { question, correctAnswer };
+    rounds.push(round);
   }
+  runGame(rounds, qestionText);
 };

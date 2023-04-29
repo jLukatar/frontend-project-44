@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-import gameLogic from '../index.js';
-import greeting from '../greeting.js';
+import runGame from '../index.js';
+import generateRandomNumber from '../utils.js';
 
 const isPrime = (n) => {
   if (n <= 1) {
@@ -15,14 +15,12 @@ const isPrime = (n) => {
 };
 
 export default () => {
-  const userName = greeting();
-  console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
+  const taskText = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+  const rounds = [];
   for (let i = 1; i <= 3; i += 1) {
-    const randomNum = Math.floor(Math.random() * 100 + 1);
-    const rightAnswer = isPrime(randomNum) ? 'yes' : 'no';
-    const result = gameLogic(rightAnswer, userName, randomNum, i);
-    if (!result) {
-      break;
-    }
+    const question = generateRandomNumber(100, 1);
+    const correctAnswer = isPrime(question) ? 'yes' : 'no';
+    rounds.push({ question, correctAnswer });
   }
+  runGame(rounds, taskText);
 };
