@@ -2,14 +2,16 @@
 import runGame from '../index.js';
 import generateRandomNumber from '../utils.js';
 
+const isEven = (num) => num % 2 === 0;
+
+const qestionText = 'Answer "yes" if the number is even, otherwise answer "no".';
+
 export default () => {
-  const qestionText = 'Answer "yes" if the number is even, otherwise answer "no".';
-  const rounds = [];
-  for (let i = 0; i <= 3; i += 1) {
-    const question = generateRandomNumber(100, 1);
-    const correctAnswer = (question % 2 === 0) ? 'yes' : 'no';
-    const round = { question, correctAnswer };
-    rounds.push(round);
-  }
-  runGame(rounds, qestionText);
+  const generateRound = () => {
+    const question = generateRandomNumber(1, 100);
+    const correctAnswer = isEven(question) ? 'yes' : 'no';
+    const round = { roundQuestion: question, correctAnswer };
+    return round;
+  };
+  runGame(generateRound, qestionText);
 };

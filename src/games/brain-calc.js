@@ -1,31 +1,31 @@
 import runGame from '../index.js';
 import generateRandomNumber from '../utils.js';
 
-const calculate = (operation, firstNum, secondNum) => {
+const calculate = (operation, umber1, number2) => {
   switch (operation) {
     case '+':
-      return firstNum + secondNum;
+      return umber1 + number2;
     case '-':
-      return firstNum - secondNum;
+      return umber1 - number2;
     case '*':
-      return firstNum * secondNum;
+      return umber1 * number2;
     default:
       throw new Error(`Unknown operation: '${operation}'!`);
   }
 };
 
+const taskText = 'What is the result of the expression?';
+
 export default () => {
-  const taskText = 'What is the result of the expression?';
   const mathOperations = ['+', '-', '*'];
-  const rounds = [];
-  for (let i = 0; i < 3; i += 1) {
-    const firstNum = generateRandomNumber(11);
-    const secondNum = generateRandomNumber(11);
-    const operation = mathOperations[generateRandomNumber(3)];
-    const question = `${firstNum} ${operation} ${secondNum}`;
+  const generateRound = () => {
+    const firstNum = generateRandomNumber(1, 10);
+    const secondNum = generateRandomNumber(1, 10);
+    const operation = mathOperations[generateRandomNumber(0, 2)];
+    const roundQuestion = `${firstNum} ${operation} ${secondNum}`;
     const correctAnswer = calculate(operation, firstNum, secondNum).toString();
-    const round = { question, correctAnswer };
-    rounds.push(round);
-  }
-  runGame(rounds, taskText);
+    const round = { roundQuestion, correctAnswer };
+    return round;
+  };
+  runGame(generateRound, taskText);
 };
