@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 import runGame from '../index.js';
 import generateRandomNumber from '../utils.js';
 
@@ -14,14 +13,14 @@ const findGcd = (a, b) => {
 
 const taskText = 'Find the greatest common divisor of given numbers.';
 
+const generateRound = () => {
+  const firstNum = generateRandomNumber(1, 100);
+  const secondNum = generateRandomNumber(1, 100);
+  const roundQuestion = `${firstNum} ${secondNum}`;
+  const correctAnswer = findGcd(firstNum, secondNum).toString();
+  return { roundQuestion, correctAnswer };
+};
+
 export default () => {
-  const generateRound = () => {
-    const firstNum = generateRandomNumber(1, 100);
-    const secondNum = generateRandomNumber(1, 100);
-    const roundQuestion = `${firstNum} ${secondNum}`;
-    const correctAnswer = findGcd(firstNum, secondNum).toString();
-    const round = { roundQuestion, correctAnswer };
-    return round;
-  };
   runGame(generateRound, taskText);
 };

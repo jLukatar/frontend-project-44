@@ -4,14 +4,14 @@ import generateRandomNumber from '../utils.js';
 
 const isEven = (num) => num % 2 === 0;
 
-const qestionText = 'Answer "yes" if the number is even, otherwise answer "no".';
+const questionText = 'Answer "yes" if the number is even, otherwise answer "no".';
+
+const generateRound = () => {
+  const question = generateRandomNumber(1, 100);
+  const correctAnswer = isEven(question) ? 'yes' : 'no';
+  return { roundQuestion: question, correctAnswer };
+};
 
 export default () => {
-  const generateRound = () => {
-    const question = generateRandomNumber(1, 100);
-    const correctAnswer = isEven(question) ? 'yes' : 'no';
-    const round = { roundQuestion: question, correctAnswer };
-    return round;
-  };
-  runGame(generateRound, qestionText);
+  runGame(generateRound, questionText);
 };
