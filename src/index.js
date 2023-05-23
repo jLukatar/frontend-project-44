@@ -7,11 +7,11 @@ const runGame = (generateRound, description) => {
   console.log(description);
   const roundsCount = 3;
   for (let i = 0; i < roundsCount; i += 1) {
-    const { roundQuestion: question, correctAnswer } = generateRound();
+    const { question, answer } = generateRound();
     console.log(`Question: ${question}`);
     const userAnswer = askQuestion('Your answer: ');
-    if (correctAnswer !== userAnswer) {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+    if (answer !== userAnswer) {
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${answer}'.`);
       console.log(`Let's try again, ${userName}!`);
       return;
     }

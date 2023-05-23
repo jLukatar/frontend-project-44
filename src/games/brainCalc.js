@@ -14,18 +14,18 @@ const calculate = (operation, number1, number2) => {
   }
 };
 
-const taskText = 'What is the result of the expression?';
+const description = 'What is the result of the expression?';
 
 const generateRound = () => {
   const operations = ['+', '-', '*'];
-  const num1 = generateRandomNumber(1, 10);
-  const num2 = generateRandomNumber(1, 10);
-  const operation = operations[generateRandomNumber(0, 2)];
-  const roundQuestion = `${num1} ${operation} ${num2}`;
-  const correctAnswer = calculate(operation, num1, num2).toString();
-  return { roundQuestion, correctAnswer };
+  const number1 = generateRandomNumber(1, 10);
+  const number2 = generateRandomNumber(1, 10);
+  const operation = operations[generateRandomNumber(0, operations.length - 1)];
+  const question = `${number1} ${operation} ${number2}`;
+  const answer = calculate(operation, number1, number2).toString();
+  return { question, answer };
 };
 
 export default () => {
-  runGame(generateRound, taskText);
+  runGame(generateRound, description);
 };

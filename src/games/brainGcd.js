@@ -11,16 +11,16 @@ const findGcd = (a, b) => {
   return divisors.pop();
 };
 
-const taskText = 'Find the greatest common divisor of given numbers.';
+const description = 'Find the greatest common divisor of given numbers.';
 
 const generateRound = () => {
   const firstNum = generateRandomNumber(1, 100);
   const secondNum = generateRandomNumber(1, 100);
-  const roundQuestion = `${firstNum} ${secondNum}`;
-  const correctAnswer = findGcd(firstNum, secondNum).toString();
-  return { roundQuestion, correctAnswer };
+  const question = `${firstNum} ${secondNum}`;
+  const answer = findGcd(firstNum, secondNum).toString();
+  return { question, answer };
 };
 
 export default () => {
-  runGame(generateRound, taskText);
+  runGame(generateRound, description);
 };
